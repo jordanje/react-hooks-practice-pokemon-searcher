@@ -23,13 +23,17 @@ const filteredPokemon = pokemon.filter((char) => {
     })
 
 
+    const updatePokemon = (newPokemon) => {
+      setPokemon([...pokemon, newPokemon])
+    }
+
 
 
   return (
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm pokemon={pokemon} setPokemon={setPokemon}/>
+      <PokemonForm updatePokemon={updatePokemon}/>
       <br />
       <Search searchValue={searchValue} handleSearch={handleSearch}/>
       <br />

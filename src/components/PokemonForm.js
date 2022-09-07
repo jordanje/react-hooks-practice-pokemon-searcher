@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form } from "semantic-ui-react";
 
-function PokemonForm({setPokemon, pokemon}) {
+function PokemonForm({updatePokemon}) {
   const [ formData, setFormData ] = useState({
     name: "",
     hp: "",
@@ -34,7 +34,7 @@ function PokemonForm({setPokemon, pokemon}) {
         "Content-type" : "application/json"
       },
       body: JSON.stringify(newPokemon)
-    }).then(res => res.json()).then(data => setPokemon([...pokemon, data]))
+    }).then(res => res.json()).then(data => updatePokemon(data))
 
     setFormData({
     name: "",
